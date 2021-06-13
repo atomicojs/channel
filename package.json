@@ -1,0 +1,17 @@
+{
+  "name": "channel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "wtr test/**/*.test.js --node-resolve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@atomico/exports": "^0.15.0",
+    "@esm-bundle/chai": "^4.3.4",
+    "@web/test-runner": "^0.13.11"
+  }
+}
