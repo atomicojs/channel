@@ -1,5 +1,5 @@
 import { expect } from "@esm-bundle/chai";
-import { Channel } from "../channel.js";
+import { Channel } from "../src/channel.js";
 /**
  * @todo add test for channel disconnection
  * @todo add test for channel recycling
