@@ -10,9 +10,8 @@ This API is inspired by the objectives of React Context, but eliminates the comp
 
 A channel is a sender and a receiver of status through the native event system of the DOM, a channel has the following logic:
 
-1. Listen to the father's broadcasts.
-2. Generate broadcast for children.
-3. When the channel is connected, it will retrieve the last broadcast of the parent channel.
+1. read the context of parent
+2. modify the context for children
 
 ## Example
 
@@ -26,17 +25,19 @@ const CHANNEL = "MyChannel";
 const parentChannel = new Channel(document.body, CHANNEL);
 
 class MyComponent extends HTMLElement {
-  constructor() {
-    super();
-    // Child channel
-    this.channel = new Channel(this, CHANNEL);
-  }
-  connectedcallback() {
-    this.channel.connected((data) => (this.textContent = JSON.stringify(data)));
-  }
-  disconnectedCallback() {
-    this.channel.disconnect();
-  }
+    constructor() {
+        super();
+        // Child channel
+        this.channel = new Channel(this, CHANNEL);
+    }
+    connectedcallback() {
+        this.channel.connected(
+            (data) => (this.textContent = JSON.stringify(data))
+        );
+    }
+    disconnectedCallback() {
+        this.channel.disconnect();
+    }
 }
 
 // Connect the channel to the native DOM event system
@@ -51,13 +52,13 @@ parentChannel.cast("I'm your father");
 
 ```js
 const channel = new Channel(
-  // Element
-  host,
-  // string
-  "idString",
-  // associates the composed option to the event
-  // this allows bypassing the shadowDOM when connecting the channels
-  true
+    // Element
+    host,
+    // string
+    "idString",
+    // associates the composed option to the event
+    // this allows bypassing the shadowDOM when connecting the channels
+    true
 );
 ```
 
