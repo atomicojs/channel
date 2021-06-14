@@ -1,6 +1,6 @@
 # @atomico/channel
 
-`@atomico/channel` allows sharing information between WebComponents or DOM easily.
+`@atomico/channel` allows sharing states between WebComponents or DOM easily.
 
 ![Example](https://i.ibb.co/DfWvg85/Grupo-38.png)
 
@@ -8,7 +8,7 @@ This API is inspired by the objectives of React Context, but eliminates the comp
 
 ## What is a channel?
 
-A channel is a sender and receiver that shares information through the DOM's native event system, a channel has the following logic:
+A channel is a sender and a receiver of status through the native event system of the DOM, a channel has the following logic:
 
 1. Listen to the father's broadcasts.
 2. Generate broadcast for children.
@@ -28,7 +28,7 @@ const parentChannel = new Channel(document.body, CHANNEL);
 class MyComponent extends HTMLElement {
   constructor() {
     super();
-    // Canal hijo
+    // Child channel
     this.channel = new Channel(this, CHANNEL);
   }
   connectedcallback() {
