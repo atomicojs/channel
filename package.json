@@ -11,7 +11,7 @@
   "scripts": {
     "types": "tsc",
     "test": "wtr test/**/*.test.js --node-resolve",
-    "prepublishOnly": "pm run test && npm run types"
+    "prepublishOnly": "npm run test && npm run types"
   },
   "keywords": [],
   "devDependencies": {
