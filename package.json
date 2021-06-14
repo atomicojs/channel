@@ -2,7 +2,12 @@
   "name": "@atomico/channel",
   "version": "0.0.0",
   "description": "sharing states between WebComponents or DOM easily.",
-  "main": "index.js",
+  "main": "./src/channel.js",
+  "module": "./src/channel.js",
+  "types": "./channel.d.ts",
+  "exports": {
+    ".": "./src/channel.js"
+  },
   "scripts": {
     "types": "tsc",
     "test": "wtr test/**/*.test.js --node-resolve",
