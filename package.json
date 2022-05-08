@@ -1,6 +1,7 @@
 {
   "name": "@atomico/channel",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "type": "module",
   "description": "sharing states between WebComponents or DOM easily.",
   "main": "./src/channel.js",
   "module": "./src/channel.js",
